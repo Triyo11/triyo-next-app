@@ -9,7 +9,7 @@ type HandleEvent = (e: React.MouseEvent<HTMLButtonElement>) => void;
 const handleOpenResume: HandleEvent = (e) => {
   e.preventDefault();
   window.open(
-    "https://drive.google.com/file/d/1DfofpULBUMNTtnOBZIjsrx3St0TZ9vhG/view?usp=sharing",
+    "https://drive.google.com/file/d/1tUmg6VkH5hks93utRk0muqFB9HJqfWbS/view?usp=sharing",
     "_blank"
   );
 };
