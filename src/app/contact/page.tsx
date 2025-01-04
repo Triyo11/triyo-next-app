@@ -44,7 +44,7 @@ export default function Contact() {
       } else {
         throw new Error("Failed to send email");
       }
-    } catch () {
+    } catch {
       toast.update(toastify, {
         render: "Failed to send the message. Please try again.",
         type: "error",
