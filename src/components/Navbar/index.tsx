@@ -31,7 +31,7 @@ const handleVisitLinkedIn: HandleEvent = (e) => {
 
 const Navbar = () => {
   return (
-    <div className="bg-[#E9E9E5] flex md:flex-row flex-col justify-between items-center px-5 min-h-max w-full">
+    <div className="bg-[#E9E9E5] absolute top-0 z-20 flex md:flex-row flex-col justify-between items-center px-5 min-h-max w-full">
       <div className="flex md:flex-row md:gap-2 flex-col gap-0 items-center justify-center mb-2">
         <div className="md:text-3xl text-xl py-2 text-gray-700 font-expletus">
           Hi, I&apos;m

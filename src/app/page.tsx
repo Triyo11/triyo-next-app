@@ -22,18 +22,17 @@ export default function Home() {
   return (
     <div>
       <Navbar />
-      <div className="flex flex-col justify-center items-center w-full h-[70vh] m-0 font-asap no-select">
-        {/* <div className="flex flex-col justify-center items-center w-full h-screen m-0 font-asap no-select"> */}
-        <div className="flex m</div>d:flex-row justify-center flex-col items-center">
+      <div className="flex flex-col justify-center items-center w-full h-screen m-0 font-asap no-select">
+        <div className="flex md:flex-row justify-center flex-col items-center pb-16">
           <Image
             className="photo-small"
-            width={160}
-            height={208}
+            width={180}
+            height={228}
             alt="personal-small-screen"
             src="/assets/foto-personal-web.png"
           />
         </div>
-        <div className="flex flex-row md:px-20 px-10">
+        <div className="flex flex-row md:px-40 px-10">
           <Image
             className="w-[27rem] h-[30rem] photo-big"
             width={432}
@@ -56,13 +55,13 @@ export default function Home() {
                 fontSize: "clamp(0.875rem, 0.655rem + 0.939vw, 1.5rem)",
               }}
             >
-              My expertise spans both front-end and back-end technologies,
-              allowing me to create seamless and responsive applications. I am
-              enthusiastic about leveraging my skills to contribute to impactful
-              projects and collaborate with dynamic teams.
+              My expertise lies in front-end technologies, creating seamless and
+              responsive user interfaces. While I have basic knowledge of
+              back-end, my focus remains on delivering exceptional front-end
+              experiences.
             </p>
             <div
-              className="flex md:pb-0 pb-6 md:text-left text-center md:pt-[3rem] pt-5 gap-5 md:justify-end justify-center"
+              className="flex md:pb-0 pb-6 md:text-left text-center md:pt-[3rem] pt-5 gap-16 md:justify-end justify-center"
               style={{
                 fontSize: "clamp(0.875rem, 0.655rem + 0.939vw, 1.5rem)",
               }}
@@ -87,6 +86,10 @@ export default function Home() {
               See more about me
             </NavLink> */}
           </div>
+        </div>
+        {/* create a footer that contains "made with ❤️ by Triyo" */}
+        <div className="flex justify-center items-center w-full h-20 fixed bottom-0">
+          <p className="text-gray-700">Made with ❤️ by Triyo</p>
         </div>
       </div>
     </div>
