@@ -4,12 +4,15 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import "animate.css";
 
 export default function Home() {
   const router = useRouter();
   const handleDirectLastProjectPage = () => router.push("/project");
   const handleDirectConnect = () => router.push("/contact");
+
+  const MotionImage = motion.create(Image);
 
   useEffect(() => {
     const noSelectElements = document.querySelectorAll(".no-select");
@@ -24,7 +27,10 @@ export default function Home() {
       <Navbar />
       <div className="flex flex-col justify-center items-center w-full h-screen m-0 font-asap no-select">
         <div className="flex md:flex-row justify-center flex-col items-center pb-16">
-          <Image
+          <MotionImage
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
             className="photo-small"
             width={180}
             height={228}
@@ -33,7 +39,10 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-row md:px-40 px-10">
-          <Image
+          <MotionImage
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7 }}
             className="w-[27rem] h-[30rem] photo-big"
             width={432}
             height={480}
@@ -88,7 +97,7 @@ export default function Home() {
           </div>
         </div>
         {/* create a footer that contains "made with ❤️ by Triyo" */}
-        <div className="flex justify-center items-center w-full h-20 fixed bottom-0">
+        <div className="flex justify-center items-center w-full h-20">
           <p className="text-gray-700">Made with ❤️ by Triyo</p>
         </div>
       </div>
