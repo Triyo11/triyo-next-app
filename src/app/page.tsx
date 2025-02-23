@@ -23,9 +23,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div>
+    <div className="flex flex-col justify-between w-full h-screen font-asap no-select">
       <Navbar />
-      <div className="flex flex-col justify-center items-center w-full h-screen m-0 font-asap no-select">
+      <div className="flex flex-col justify-center items-center w-full h-screen m-0">
         <div className="flex md:flex-row justify-center flex-col items-center pb-16">
           <MotionImage
             initial={{ opacity: 0, y: 30 }}
@@ -39,16 +39,18 @@ export default function Home() {
           />
         </div>
         <div className="flex flex-row md:px-40 px-10">
-          <MotionImage
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7 }}
-            className="w-[27rem] h-[30rem] photo-big"
-            width={432}
-            height={480}
-            alt="personal-medium-screen"
-            src="/assets/foto-personal-web.png"
-          />
+          <div className="relative">
+            <MotionImage
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7 }}
+              className="w-[30rem] h-[30rem] photo-big"
+              width={432}
+              height={480}
+              alt="personal-medium-screen"
+              src="/assets/foto-personal-web.png"
+            />
+          </div>
           <div className="flex flex-col justify-center w-full animate__animated animate__fadeIn">
             <h2
               className="font-semibold text-gray-900"
@@ -96,10 +98,10 @@ export default function Home() {
             </NavLink> */}
           </div>
         </div>
-        {/* create a footer that contains "made with ❤️ by Triyo" */}
-        <div className="flex justify-center items-center w-full h-20">
-          <p className="text-gray-700">Made with ❤️ by Triyo</p>
-        </div>
+      </div>
+      {/* create a footer that contains "made with ❤️ by Triyo" */}
+      <div className="flex justify-center items-center w-full h-20">
+        <p className="text-gray-700">Made with ❤️ by Triyo</p>
       </div>
     </div>
   );
