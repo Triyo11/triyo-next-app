@@ -1,102 +1,319 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
 
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
+@theme {
+  --font-sans: Open Sans, sans-serif;
+  --font-acme: Acme, sans-serif;
+  --font-expletus: Expletus Sans, sans-serif;
+  --font-asap: Asap, sans-serif;
+
+  --animate-text-slide-2: text-slide-2 5s cubic-bezier(0.83, 0, 0.17, 1)
+    infinite;
+  --animate-text-slide-3: text-slide-3 7.5s cubic-bezier(0.83, 0, 0.17, 1)
+    infinite;
+  --animate-text-slide-4: text-slide-4 10s cubic-bezier(0.83, 0, 0.17, 1)
+    infinite;
+  --animate-text-slide-5: text-slide-5 12.5s cubic-bezier(0.83, 0, 0.17, 1)
+    infinite;
+  --animate-text-slide-6: text-slide-6 15s cubic-bezier(0.83, 0, 0.17, 1)
+    infinite;
+  --animate-text-slide-7: text-slide-7 17.5s cubic-bezier(0.83, 0, 0.17, 1)
+    infinite;
+  --animate-text-slide-8: text-slide-8 20s cubic-bezier(0.83, 0, 0.17, 1)
+    infinite;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  @keyframes text-slide-2 {
+    0%,
+    40% {
+      transform: translateY(0%);
+    }
+    50%,
+    90% {
+      transform: translateY(-115.33%);
+    }
+    100% {
+      transform: translateY(-229.66%);
+    }
+  }
+  @keyframes text-slide-3 {
+    0%,
+    26.66% {
+      transform: translateY(0%);
+    }
+    33.33%,
+    60% {
+      transform: translateY(-25%);
+    }
+    66.66%,
+    93.33% {
+      transform: translateY(-50%);
+    }
+    100% {
+      transform: translateY(-75%);
+    }
+  }
+  @keyframes text-slide-4 {
+    0%,
+    20% {
+      transform: translateY(0%);
+    }
+    25%,
+    45% {
+      transform: translateY(-20%);
+    }
+    50%,
+    70% {
+      transform: translateY(-40%);
+    }
+    75%,
+    95% {
+      transform: translateY(-60%);
+    }
+    100% {
+      transform: translateY(-80%);
+    }
+  }
+  @keyframes text-slide-5 {
+    0%,
+    16% {
+      transform: translateY(0%);
+    }
+    20%,
+    36% {
+      transform: translateY(-16.66%);
+    }
+    40%,
+    56% {
+      transform: translateY(-33.33%);
+    }
+    60%,
+    76% {
+      transform: translateY(-50%);
+    }
+    80%,
+    96% {
+      transform: translateY(-66.66%);
+    }
+    100% {
+      transform: translateY(-83.33%);
+    }
+  }
+  @keyframes text-slide-6 {
+    0%,
+    13.33% {
+      transform: translateY(0%);
+    }
+    16.66%,
+    30% {
+      transform: translateY(-14.28%);
+    }
+    33.33%,
+    46.66% {
+      transform: translateY(-28.57%);
+    }
+    50%,
+    63.33% {
+      transform: translateY(-42.85%);
+    }
+    66.66%,
+    80% {
+      transform: translateY(-57.14%);
+    }
+    83.33%,
+    96.66% {
+      transform: translateY(-71.42%);
+    }
+    100% {
+      transform: translateY(-85.71%);
+    }
+  }
+  @keyframes text-slide-7 {
+    0%,
+    11.43% {
+      transform: translateY(0%);
+    }
+    14.28%,
+    25.71% {
+      transform: translateY(-12.5%);
+    }
+    28.57%,
+    40% {
+      transform: translateY(-25%);
+    }
+    42.85%,
+    54.28% {
+      transform: translateY(-37.5%);
+    }
+    57.14%,
+    68.57% {
+      transform: translateY(-50%);
+    }
+    71.42%,
+    82.85% {
+      transform: translateY(-62.5%);
+    }
+    85.71%,
+    97.14% {
+      transform: translateY(-75%);
+    }
+    100% {
+      transform: translateY(-87.5%);
+    }
+  }
+  @keyframes text-slide-8 {
+    0%,
+    10% {
+      transform: translateY(0%);
+    }
+    12.5%,
+    22.5% {
+      transform: translateY(-11.11%);
+    }
+    25%,
+    35% {
+      transform: translateY(-22.22%);
+    }
+    37.5%,
+    47.5% {
+      transform: translateY(-33.33%);
+    }
+    50%,
+    60% {
+      transform: translateY(-44.44%);
+    }
+    62.5%,
+    72.5% {
+      transform: translateY(-55.55%);
+    }
+    75%,
+    85% {
+      transform: translateY(-66.66%);
+    }
+    87.5%,
+    97.5% {
+      transform: translateY(-77.77%);
+    }
+    100% {
+      transform: translateY(-88.88%);
+    }
+  }
 }
 
-:root {
-  color-scheme: normal;
-  background-color: #e9e9e5;
+/*
+  The default border color has changed to `currentColor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
 }
 
-.gradient-text-color {
-  background: rgb(250, 87, 5);
-  background: linear-gradient(
-    90deg,
-    rgba(250, 87, 5, 1) 0%,
-    rgb(255, 0, 93) 15%,
-    rgba(221, 119, 55, 1) 35%,
-    rgba(233, 8, 92, 1) 77%
-  );
-  background-size: 100%;
-  background-repeat: repeat;
-  background-clip: padding-box;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-background-clip: text;
-  -moz-text-fill-color: transparent;
+@utility download-cv {
+  @apply border-2 border-gray-700 hover:border-orange-500 text-gray-700 hover:text-orange-500 hover:bg-white text-sm font-semibold transition-all rounded-lg py-0 px-2 mr-2;
+}
+@utility navbar-contact {
+  @apply p-2 text-gray-700 hover:text-orange-500 transition-all;
 }
 
-.gradient-background-color {
-  background: rgb(250, 87, 5);
-  background: linear-gradient(
-    90deg,
-    rgba(250, 87, 5, 1) 0%,
-    rgba(221, 119, 55, 1) 35%,
-    rgba(226, 73, 70, 1) 74%,
-    rgba(233, 8, 92, 1) 100%
-  );
-}
+@layer utilities {
+  * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+  }
 
-.tagline {
-  @apply text-black font-expletus;
-}
+  :root {
+    color-scheme: normal;
+    background-color: #e9e9e5;
+  }
 
-/* .foto {
+  .gradient-text-color {
+    background: rgb(250, 87, 5);
+    background: linear-gradient(
+      90deg,
+      rgba(250, 87, 5, 1) 0%,
+      rgb(255, 0, 93) 15%,
+      rgba(221, 119, 55, 1) 35%,
+      rgba(233, 8, 92, 1) 77%
+    );
+    background-size: 100%;
+    background-repeat: repeat;
+    background-clip: padding-box;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+    -moz-text-fill-color: transparent;
+  }
+
+  .gradient-background-color {
+    background: rgb(250, 87, 5);
+    background: linear-gradient(
+      90deg,
+      rgba(250, 87, 5, 1) 0%,
+      rgba(221, 119, 55, 1) 35%,
+      rgba(226, 73, 70, 1) 74%,
+      rgba(233, 8, 92, 1) 100%
+    );
+  }
+
+  .tagline {
+    @apply text-black font-expletus;
+  }
+
+  /* .foto {
   height: 30rem;
   width: 27rem;
 } */
 
-@media screen and (max-width: 1279px) {
-  .photo-big {
-    display: none;
-  }
-}
-
-@media screen and (min-width: 1279px) {
-  .photo-small {
-    display: none;
-  }
-}
-
-@keyframes spin1 {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes spin2 {
-  from {
-    transform: rotate(360deg);
-  }
-  to {
-    transform: rotate(0deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .icon1-spin {
-    animation: spin1 infinite 5s linear;
-  }
-  .icon2-spin {
-    animation: spin2 infinite 5s linear;
-  }
-}
-
-/* Navbar Content */
-@layer components {
-  .download-cv {
-    @apply border-2 border-gray-700 hover:border-orange-500 text-gray-700 hover:text-orange-500 hover:bg-white text-sm font-semibold transition-all rounded-lg py-0 px-2 mr-2;
+  @media screen and (max-width: 1279px) {
+    .photo-big {
+      display: none;
+    }
   }
 
-  .navbar-contact {
-    @apply p-2 text-gray-700 hover:text-orange-500 transition-all;
+  @media screen and (min-width: 1279px) {
+    .photo-small {
+      display: none;
+    }
   }
+
+  @keyframes spin1 {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes spin2 {
+    from {
+      transform: rotate(360deg);
+    }
+    to {
+      transform: rotate(0deg);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference) {
+    .icon1-spin {
+      animation: spin1 infinite 5s linear;
+    }
+    .icon2-spin {
+      animation: spin2 infinite 5s linear;
+    }
+  }
+
+  /* Navbar Content */
 }

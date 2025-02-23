@@ -36,7 +36,7 @@ const Navbar = () => {
         <div className="md:text-3xl text-xl py-2 text-gray-700 font-expletus">
           Hi, I&apos;m
         </div>
-        <div className="md:mt-2 mt-0 inline-flex h-[calc(theme(fontSize.3xl)*theme(lineHeight.tight))] md:h-[calc(theme(fontSize.4xl)*theme(lineHeight.tight))] overflow-hidden">
+        <div className="md:mt-2 mt-0 inline-flex h-[calc(var(--text-3xl)*(var(--leading-tight)))] md:h-[calc(var(--text-4xl)*(var(--leading-tight)))] overflow-hidden">
           <ul className="font-expletus block animate-text-slide-2 md:text-3xl text-xl [&_li]:block md:text-left text-center">
             <li className="gradient-text-color font-bold pb-4">Triyo</li>
             <li className="gradient-text-color font-bold pb-4">
