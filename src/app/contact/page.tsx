@@ -65,14 +65,14 @@ export default function Contact() {
             onSubmit={handleSubmit}
           >
             <input
-              className="w-full p-2 border-2 border-gray-500 rounded-xl focus:outline-none focus:border-blue-500"
+              className="w-full p-2 border-2 border-gray-500 rounded-xl focus:outline-hidden focus:border-blue-500"
               required
               placeholder="name"
               id="name"
               ref={nameRef}
             />
             <input
-              className="w-full p-2 border-2 border-gray-500 rounded-xl focus:outline-none focus:border-blue-500"
+              className="w-full p-2 border-2 border-gray-500 rounded-xl focus:outline-hidden focus:border-blue-500"
               type="email"
               required
               placeholder="email"
@@ -80,7 +80,7 @@ export default function Contact() {
               ref={emailRef}
             />
             <textarea
-              className="w-full min-h-48 p-2 border-2 border-gray-500 rounded-xl focus:outline-none focus:border-blue-500"
+              className="w-full min-h-48 p-2 border-2 border-gray-500 rounded-xl focus:outline-hidden focus:border-blue-500"
               required
               placeholder="message"
               id="message"
