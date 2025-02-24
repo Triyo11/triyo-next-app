@@ -33,7 +33,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
-            className="photo-small"
+            className="photo-small bg-radial-[at_center_70%] from-amber-200 to-background to-70%"
             width={180}
             height={228}
             alt="personal-small-screen"
@@ -46,7 +46,7 @@ export default function Home() {
               initial={{ opacity: 0, x: -30 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.7 }}
-              className="w-[30rem] h-[30rem] photo-big"
+              className="w-[30rem] h-[30rem] photo-big bg-radial-[at_center_70%] from-amber-200 to-background to-70%"
               width={432}
               height={480}
               alt="personal-medium-screen"
