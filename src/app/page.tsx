@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
+import HeroButton from "@/components/micro-components/HeroButton";
+
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import { motion } from "framer-motion";
@@ -52,15 +54,33 @@ export default function Home() {
             />
           </div>
           <div className="flex flex-col justify-center w-full animate__animated animate__fadeIn">
-            <h2
+            <motion.h2
+              initial={{ transform: "translateY(-50%)", opacity: 0 }}
+              animate={{ transform: "translateY(0%)", opacity: 1 }}
+              transition={{
+                duration: 0.7,
+                type: "spring",
+                stiffness: 100,
+                ease: "easeInOut",
+                delay: 0.7,
+              }}
               className="font-semibold text-gray-900"
               style={{
                 fontSize: "clamp(1.25rem, 1.118rem + 0.563vw, 1.625rem)",
               }}
             >
               Welcome,
-            </h2>
-            <p
+            </motion.h2>
+            <motion.p
+              initial={{ transform: "translateY(-50%)", opacity: 0 }}
+              animate={{ transform: "translateY(0%)", opacity: 1 }}
+              transition={{
+                duration: 0.7,
+                type: "spring",
+                stiffness: 100,
+                ease: "easeInOut",
+                delay: 0.7,
+              }}
               className="text-gray-800 text-justify pb-3"
               style={{
                 fontSize: "clamp(0.875rem, 0.655rem + 0.939vw, 1.5rem)",
@@ -70,25 +90,21 @@ export default function Home() {
               responsive user interfaces. While I have basic knowledge of
               back-end, my focus remains on delivering exceptional front-end
               experiences.
-            </p>
+            </motion.p>
             <div
               className="flex md:pb-0 pb-6 md:text-left text-center md:pt-[3rem] pt-5 gap-16 md:justify-end justify-center"
               style={{
                 fontSize: "clamp(0.875rem, 0.655rem + 0.939vw, 1.5rem)",
               }}
             >
-              <button
+              <HeroButton
                 onClick={() => setTimeout(handleDirectLastProjectPage, 500)}
-                className="text-gray-700 blur-0 hover:text-orange-500 hover:blur-[1px] transition-all ease-in-out duration-300"
               >
                 Last Projects
-              </button>
-              <button
-                onClick={() => setTimeout(handleDirectConnect, 500)}
-                className="text-gray-700 blur-0 hover:text-orange-500 hover:blur-[1px] transition-all ease-in-out duration-300"
-              >
+              </HeroButton>
+              <HeroButton onClick={() => setTimeout(handleDirectConnect, 500)}>
                 Let&apos;s connect
-              </button>
+              </HeroButton>
             </div>
             {/* <NavLink
               to={"/"}
